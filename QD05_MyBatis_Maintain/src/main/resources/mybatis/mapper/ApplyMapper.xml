@@ -18,6 +18,11 @@
 	<!-- 지원서 목록 -->
 	<select id="mtdList" resultType="com.qd04.dto.ApplyDto">
 		select * from applyList order by num desc
+	</select>	
+		
+	<!-- 지원서 상세보기(= 뷰 보기) -->
+	<select id="mtdView" resultType="com.qd04.dto.ApplyDto">
+		select * from applyList where num=#{param1}
 	</select>		
 
 </mapper>	

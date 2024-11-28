@@ -10,27 +10,25 @@
 </head>
 <body>
 	<div id="wrap" class="resWrap">
-		<h1>수신 데이터</h1>
+		<h1>${applyDto.userName} 지원 정보</h1>
 		<hr>
 		
-		<div class="res">
-			<span>이름</span> : 
-			<span>${userName}</span>
-		</div>
+		
 		<div class="res">
 			<span>연락처</span> : 
-			<span>${userPhone}</span>
+			<span>${applyDto.userPhone}</span>
 		</div>
 		<div class="res">
 			<span>지원 분야</span> : 
-			<span>${applyPart}</span>
+			<span>${applyDto.applyPart}</span>
 		</div>
 		<div class="res">
 			<span>지원 동기</span> : 
-			<span>${applyMotive}</span>
+			<span>${applyDto.applyMotive}</span>
 		</div>
 		
 		<div id="btnArea">
+			<button type="button" id="goListBtn">리스트</button>
 			<button type="button" id="insFormBtn">입력</button>
 		</div>
 		

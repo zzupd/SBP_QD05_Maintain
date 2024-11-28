@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.qd04.dao.ApplyDao;
+import com.qd04.dto.ApplyDto;
 
 @Controller
 public class MainController {
@@ -70,27 +71,20 @@ public class MainController {
 	}
 	
 	
-	// 리스트 내용 상세보기
+	// 리스트 내용 상세보기(= 뷰 보기)
 	@RequestMapping("/view")
 	public String result(
-			@RequestParam(value="userName") String userName,
-			@RequestParam(value="userPhone") String userPhone,
-			@RequestParam(value="applyPart") String applyPart,
-			@RequestParam(value="applyMotive") String applyMotive,
+			@RequestParam("numParam") String numParam,
 			Model model
 			) {
 
-		model.addAttribute("userName", userName);
-		model.addAttribute("userPhone", userPhone);
-		model.addAttribute("applyPart", applyPart);
-		model.addAttribute("applyMotive", applyMotive);
+		ApplyDto applyDto = applyDao.mtdView(numParam);
+		
+		model.addAttribute("applyDto", applyDto);
 		
 		return "view";
 	}
-	
-	
-	
-	
+		
 	
 
 
